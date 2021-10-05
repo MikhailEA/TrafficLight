@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 public class MainActivity extends AppCompatActivity {
     private LinearLayout b_1, b_2, b_3;
     private Button button_1;
-    private boolean start_stop = true;
+    private boolean start_stop = false;
     private int counter =0;
 
 
@@ -30,12 +30,32 @@ public class MainActivity extends AppCompatActivity {
         if(!start_stop){
             button_1.setText("Stop");
             start_stop = true;
+
         new Thread(new Runnable() {
             @Override
             public void run() {
                 while (start_stop) {
+                    counter++;
+                    switch (counter) {
+                        case 1:
+                            b_1.setBackgroundColor(getResources().getColor(R.color.green));
+                            b_2.setBackgroundColor(getResources().getColor(R.color.grey));
+                            b_3.setBackgroundColor(getResources().getColor(R.color.grey));
+                            break;
+                        case 2:
+                            b_1.setBackgroundColor(getResources().getColor(R.color.grey));
+                            b_2.setBackgroundColor(getResources().getColor(R.color.yellow));
+                            b_3.setBackgroundColor(getResources().getColor(R.color.grey));
+                            break;
+                        case 3:
+                            b_1.setBackgroundColor(getResources().getColor(R.color.grey));
+                            b_2.setBackgroundColor(getResources().getColor(R.color.grey));
+                            b_3.setBackgroundColor(getResources().getColor(R.color.red));
+                            counter = 0;
+                            break;
+                    }
                     try {
-                        Thread.sleep(3000);
+                        Thread.sleep(300);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

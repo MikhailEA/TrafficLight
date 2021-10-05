@@ -10,9 +10,9 @@
     <!-- My colors. -->
     <color name="grey">#6b6b83</color>
     <color name="darker_gray">#6b6b83</color>
-    <color name="green">#0f9b0f</color>
-    <color name="yellow">#f5af19</color>
-    <color name="red">#6f0000</color>
+    <color name="green">#1E9600</color>
+    <color name="yellow">#FFF200</color>
+    <color name="red">#FF0000</color>
     <color name="blue">#0575E6</color>
 
 </resources>
